@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# ⚡ MeterSy — Smart Meter Intelligence & Demand Prediction System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🔗 Live Demo: https://metersy.vercel.app/  
+💻 Repository: https://github.com/ranadeep27/MeterSy  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Overview
 
-### `npm start`
+MeterSy is an AI-driven **decision support system** that combines:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📈 Demand Prediction (Zone Level)  
+- ⚠️ Anomaly & Theft Detection (Meter Level)  
+- 🧠 Explainable Intelligence  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+It transforms smart meter data into **actionable insights for utilities like BESCOM**, enabling smarter grid monitoring and faster decision-making.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💡 Core Idea
 
-### `npm run build`
+Instead of detecting anomalies blindly, MeterSy follows:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Predicted Demand → Baseline  
+Actual Consumption → Observed  
+Deviation → Anomaly  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+👉 Anomalies are detected **relative to prediction, not just magnitude**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🧠 How It Works
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+MeterSy builds intelligence using three perspectives :contentReference[oaicite:0]{index=0}:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Temporal Intelligence** → usage patterns over time  
+- **Peer Intelligence** → comparison with similar households  
+- **Relational Intelligence** → behavior across nearby meters  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+These combined signals allow accurate detection of fraud while avoiding false positives.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📊 System Layers
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🔹 Zone Dashboard (Demand Prediction)
+- Forecasts electricity demand  
+- Compares **actual vs predicted usage**  
+- Computes **Load Score** → Safe / Warning / High Risk  
+- Identifies high-risk zones  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### 🔹 Meter Dashboard (Anomaly Detection)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Classifies meters into:
 
-### Analyzing the Bundle Size
+- 🚨 **Fraud**
+  - Sudden drops / bypass / tampering  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- ⚡ **High Usage (Events)**
+  - Spikes due to overload, gatherings  
 
-### Making a Progressive Web App
+- ✅ **Safe / Vacation**
+  - Stable low consumption (avoids false alarms)  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🔍 Real-World Handling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+MeterSy correctly distinguishes:
 
-### Deployment
+- Vacation vs Fraud  
+- Party vs Theft  
+- Seasonal changes vs anomalies  
+- Meter faults vs actual fraud  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👉 Reduces false positives significantly
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📈 Scoring System
+
+- **Load Score** → Demand risk  
+- **Fraud Score** → Theft likelihood  
+- **Event Score** → Valid usage spikes  
+
+Each output includes:
+- Confidence score  
+- Explanation  
+- Key contributing factors  
+
+---
+
+## 🧠 Explainability
+
+Every decision is:
+- Transparent  
+- Auditable  
+- Human-readable  
+
+👉 Not a black-box system
+
+---
+
+## 🛠️ Tech Stack
+
+- React.js  
+- Recharts  
+- CSV-based simulation  
+- Vercel  
+
+---
+
+## ⚙️ Run Locally
+
+```bash
+git clone https://github.com/ranadeep27/MeterSy.git
+cd MeterSy
+npm install
+npm start
